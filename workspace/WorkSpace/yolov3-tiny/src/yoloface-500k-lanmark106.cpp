@@ -120,15 +120,18 @@ int test_cam()
 {
     //定义yoloface-500k人脸检测器
     ncnn::Net detector;  
-    detector.load_param("/home/pi/Downloads/LiveFaceReco_20210315/models/yoloface/yoloface-500k.param");
-    detector.load_model("/home/pi/Downloads/LiveFaceReco_20210315/models/yoloface/yoloface-500k.bin");
+
+    detector.load_param("../models/yolo/yoloface-500k.param");
+    detector.load_model("../models/yolo/yoloface-500k.bin");
+
+
     int detector_size_width  = 320;
     int detector_size_height = 256;
 
     //定义106关键点预测器
     ncnn::Net landmark;  
-    landmark.load_param("/home/pi/Downloads/LiveFaceReco_20210315/models/yoloface/landmark106.param");
-    landmark.load_model("/home/pi/Downloads/LiveFaceReco_20210315/models/yoloface/landmark106.bin");
+    landmark.load_param("../models/yolo/landmark106.param");
+    landmark.load_model("../models/yolo/landmark106.bin");
     int landmark_size_width  =  112;
     int landmark_size_height =  112;
 
